@@ -1,0 +1,18 @@
+{
+  "employee": "Employee",
+  "employees": "Employees",
+  "firstName": "FirstName",
+  "lastName": "LastName",
+  "phone": "Phone",
+  "email": "Email",
+  "salary": "Salary",
+  "addEmployee": "Add Employee",
+  "save": "Save",
+  "cancel": "Cancel",
+  "validations": {
+    "invalid": "Invalid inputs",
+    "pattern": "Letters only",
+    "required": "Please fill this field",
+    "email": "Invalid email"
+  }
+}

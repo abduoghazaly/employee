@@ -1,1 +1,40 @@
-<p>add-employee works!</p>
+<form [formGroup]="form" class="h-full">
+  <div class="h-full flex flex-column">
+    <div class="flex-1">
+      <app-input-text
+        [control]="form.controls.employeeFirstName"
+        [label]="'firstName' | translate"
+      ></app-input-text>
+      <app-input-text
+        [control]="form.controls.employeeLastName"
+        [label]="'lastName' | translate"
+      ></app-input-text>
+      <app-intl-tel-input-text
+        [control]="form.controls.employeePhone"
+      ></app-intl-tel-input-text>
+      <app-input-text
+        [control]="form.controls.employeeEmail"
+        [label]="'email' | translate"
+      ></app-input-text>
+      <app-input-number
+        [control]="form.controls.employeeSalary"
+        [label]="'salary' | translate"
+      ></app-input-number>
+    </div>
+
+    <div class="flex gap-2">
+      <p-button
+        [label]="'save' | translate"
+        severity="success"
+        (onClick)="save()"
+        type="submit"
+      ></p-button>
+      <p-button
+        [label]="'cancel' | translate"
+        severity="secondary"
+        (onClick)="addEmployeeDrawerChange.emit(false)"
+        type="button"
+      ></p-button>
+    </div>
+  </div>
+</form>

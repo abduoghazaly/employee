@@ -1,1 +1,61 @@
-<p>list-employees works!</p>
+<div class="container">
+  <app-breadcrumb [items]="[{ label: 'employees' }]"></app-breadcrumb>
+  <div class="flex align-items-center">
+    <h2 class="flex-1">{{ "employees" | translate }}</h2>
+    <p-button
+      [label]="'addEmployee' | translate"
+      (onClick)="addEmployee()"
+    ></p-button>
+  </div>
+
+  <app-table
+    [headers]="headers"
+    [items]="employees()"
+    [actionTemplate]="actionTemplate"
+  ></app-table>
+</div>
+<p-drawer
+  [visible]="addEmployeeDrawer()"
+  (onHide)="addEmployeeDrawer.set(false)"
+  [header]="'addEmployee' | translate"
+  styleClass="w-full md:w-6"
+>
+  <app-add-employee
+    [addEmployeeDrawer]="addEmployeeDrawer()"
+    (addEmployeeDrawerChange)="addEmployeeDrawer.set($event)"
+  ></app-add-employee>
+</p-drawer>
+
+<p-drawer
+  [(visible)]="viewEmployeeDrawer"
+  [header]="'employee' | translate"
+  styleClass="w-full md:w-6"
+>
+  @if (selectedEmployee()) {
+  <app-view-employee [employee]="selectedEmployee()!"></app-view-employee>
+  }
+</p-drawer>
+
+<ng-template #actionTemplate let-rowData="rowData">
+  <div class="flex gap-1">
+    <p-button
+      [icon]="'pi pi-pencil'"
+      severity="secondary"
+      class="mx-1"
+      (onClick)="editEmployee(rowData)"
+    ></p-button>
+    <p-button
+      [icon]="'pi pi-eye'"
+      severity="secondary"
+      class="mx-1"
+      (onClick)="viewEmployee(rowData)"
+    >
+    </p-button>
+    <p-button
+      [icon]="'pi pi-trash'"
+      severity="danger"
+      class="mx-1"
+      (onClick)="deleteEmployee(rowData, $event)"
+    ></p-button>
+  </div>
+</ng-template>

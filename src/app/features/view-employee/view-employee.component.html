@@ -1,1 +1,32 @@
-<p>view-employee works!</p>
+<div class="grid">
+  <div class="col-4">
+    {{ "firstName" | translate }}
+  </div>
+  <div class="col-8 font-bold">
+    {{ employee().employeeFirstName }}
+  </div>
+  <div class="col-4">
+    {{ "lastName" | translate }}
+  </div>
+  <div class="col-8 font-bold">
+    {{ employee().employeeLastName }}
+  </div>
+  <div class="col-4">
+    {{ "phone" | translate }}
+  </div>
+  <div class="col-8 font-bold">
+    {{ employee().employeePhone }}
+  </div>
+  <div class="col-4">
+    {{ "email" | translate }}
+  </div>
+  <div class="col-8 font-bold">
+    {{ employee().employeeEmail }}
+  </div>
+  <div class="col-4">
+    {{ "salary" | translate }}
+  </div>
+  <div class="col-8 font-bold">
+    {{ employee().employeeSalary }}
+  </div>
+</div>
