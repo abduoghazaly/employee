@@ -2,6 +2,8 @@
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.5.
 
+note: use `https://stackblitz.com/github/abduoghazaly/employee?file=README.md` to run app online
+
 ## Prerequisites
 
 To run angular project you should have NPM and @angular/cli installed
